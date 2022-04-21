@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("fonts/GT-Walsheim-Bold.woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("fonts/GT-Walsheim-Regular.woff2");
+  font-weight: normal;
+}
+
+/* sRGB color. */
+:root {
+  --blush: rgb(255, 220, 244);
+  --lavender: rgb(221, 196, 255);
+  --lavender-light: rgb(240, 229, 255);
+  --night: rgb(23, 3, 55);  
+  --tiger: rgb(255, 76, 0);
+}
+
+/* Display-P3 color, when supported. */
+@media (color-gamut: p3) {
+  :root {
+    --blush: color(display-p3 1 0.8707 0.9531);
+    --lavender: color(display-P3 0.8510 0.7726 1.0000);
+    --lavender-light: color(display-P3 0.9333 0.8980 1.0000);
+    --night: color(display-P3 0.0784 0.0157 0.2039);
+    --tiger: color(display-P3 0.9882 0.3646 0.0000);
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--blush);
+  color: var(--night);  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "GT Walsheim", sans-serif;
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.welcome {
+  text-align: left;
+  margin: auto;
+}
+
+.brand { 
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.welcome p {
+  margin: 2rem auto;
+  font-size: 20px;
+}
+
+.symbol {  
+  position: fixed;
+  bottom: -280px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 321px) {
+  h1 { 
+    font-size: 60px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h1 { 
+    font-size: 80px;
+  }
+
+  .welcome, .brand {    
+    max-width: 900px;
+  }
+}
+
+@media only screen and (min-width: 940px) {
+
+  .symbol {
+    right: -400px;
+  }
+}
+
